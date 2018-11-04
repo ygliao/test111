@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<magpie xmlns='uri:unionpay:magpie:2.0'>
+
+<application name="user_sv1" heartbeatInterval="10000" dc="sh" description="用户服务"
+             contact="name;15844445555;4564512@qq.com"/>
+ <protocol id="aaa" codec="magpie_binary"  serializationType="binary" heartbeatInterval="10000"  version="2.0" />
+<reference serviceId="user_checkUser"   urls="172.21.180.112:5555"
+           loadbalanceStrategy="random" failStrategy="failover" retries="2" oneway="false"
+           timeout="5000" weights="100" dc="sh"  protocol="aaa"    />
+</magpie>
+
+
+
+<!--
+<reference serviceId="ServiceD"   urls="${myUrl=172.21.180.112:5555}"
+           loadbalanceStrategy="random" failStrategy="failover" retries="2" oneway="false" serviceVersion="2.0"
+           timeout="5000" weights="100"   interfaceClass="com.up.demo.magpieservice.CheckUserBinaryService" />
+</magpie>-->

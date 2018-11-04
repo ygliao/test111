@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+	<!-- **************************************DataSource************************************************ -->
+
+	<bean id="aresOpenPlatServer" class="server.AresOpenPlatServer">
+		<property name="address" value="127.0.0.1,172.20.7.59" />
+		<property name="crystalPort" value="9090" />
+		<property name="executorThreadCountCrystal" value="70" />
+		<property name="ioWorkCountCrystal" value="2" />
+		<property name="maxRequestSizeCrystal" value="100" />
+	</bean>
+	
+	<bean id="personalRiskEvalService" class="server.PersonalRiskEvalService">
+	</bean>
+
+
+</beans>
